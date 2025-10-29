@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHOCOLÁXIA DOCERIA - Pedidos Online</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="shadow-md">
+        <div class="logo-container">
+            <h1 class="logo-text">CHOCOLÁXIA</h1>
+            <p class="slogan">Um universo de sabor a cada mordida!</p>
+        </div>
+        
+        <nav>
+            <a href="#produtos">Cardápio</a>
+            <a href="#carrinho" class="carrinho-link">🛒 Carrinho (<span id="contador-carrinho">0</span>)</a>
+            <a href="#localizacao-frete">Delivery</a>
+        </nav>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+    </header>
+
+    <main>
+        <section id="produtos" class="section-produtos">
+            <h2 class="section-title">⭐Cardápio</h2>
+            
+            <div class="filter-controls">
+                <label for="filtro-categoria">Filtrar por:</label>
+                <select id="filtro-categoria">
+                    <option value="todos">Todas as Categorias</option>
+                    <option value="Bolo no Pote">Bolo no Pote</option>
+                    <option value="Caseirinho">Caseirinhos</option>
+                    <option value="Brownie">Brownies</option>
+                    <option value="Doce">Doces Unitários</option>
+                </select>
+            </div>
+
+            <div id="lista-produtos" class="produtos-grid">
+                <p>Carregando delícias...</p>
+            </div>
+        </section>
+
+        <section id="carrinho" class="carrinho-secao shadow-lg">
+            <h2 class="section-title">✨ Seu Pedido</h2>
+            <div id="itens-carrinho" class="carrinho-itens-list">
+                <p class="empty-message">Seu carrinho está ansioso por um chocolate!</p>
+            </div>
+            <div class="carrinho-rodape">
+                <p>Total: <span class="total-label">R$</span> <span id="total-carrinho" class="total-value">0.00</span></p>
+                <button id="finalizar-pedido" class="btn-primary">Finalizar Pedido Agora</button>
+            </div>
+        </section>
+
+        <section id="localizacao-frete" class="frete-secao shadow-md">
+            <h3>🚀 Calcular Frete (Palmas-TO)</h3>
+            <p id="status-localizacao">Aguardando sua permissão de localização...</p>
+            <button id="obter-localizacao" class="btn-secondary">Obter Minha Localização</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025
