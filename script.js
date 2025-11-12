@@ -15,6 +15,7 @@ const mockProdutos = [
     { id: 302, nome: "Brookie Lunar (Brownie + Cookie)", preco: 14.00, imagem: "brookie_lunar.jpg", categoria: "Brownie", descricao: "A união perfeita entre brownie intenso e cookie crocante e doce. Uma explosão de texturas e sabores em uma só mordida!" },
     { id: 401, nome: "Morango Estrelar (Bombom)", preco: 12.00, imagem: "morango_estrelar.jpg", categoria: "Doce", descricao: "Morango fresco envolto em brigadeiro de Leite Ninho, banhado em puro chocolate nobre. Sabor suave, frutado e chocolatudo." },
     { id: 402, nome: "Caixinha Quatro Estrelas", preco: 18.00, imagem: "caixinha_quatro_estrelas.jpg", categoria: "Doce", descricao: "4 Brigadeiros gourmet artesanais: Leite Ninho, Chocolate Belga, Oreo e Beijinho. Cada unidade é uma explosão de sabor." }
+
 ];
 
 let carrinho = [];
@@ -122,7 +123,9 @@ const carregarProdutos = async (categoria = 'todos') => {
 
     if (produtosExibidos.length === 0) {
         listaProdutosEl.innerHTML = `<p style="text-align: center; font-size: 1.2em;">Nenhum produto encontrado na categoria "${categoria}".</p>`;
-        return;
+        return;let carrinho = []; // Array para armazenar os itens selecionados.
+// ... (O restante do código JavaScript continua aqui, usando 'mockProdutos') ...
+
     }
 
     // Inserção no DOM
@@ -141,6 +144,7 @@ const carregarProdutos = async (categoria = 'todos') => {
             <p class="preco-tag">R$ ${produto.preco.toFixed(2)}</p>
             <button data-id="${produto.id}" class="adicionar-carrinho btn-primary">Quero!</button>
         `;
+            <button data-id="${item.id}" class="remover-item">Remover 1</button>
         listaProdutosEl.appendChild(card);
     });
 
@@ -183,6 +187,7 @@ const obterLocalizacaoUsuario = () => {
     }
 };
 
+
 // =================================================================
 // 4. INICIALIZAÇÃO E LISTENERS (DOM Events)
 // =================================================================
@@ -213,3 +218,4 @@ finalizarPedidoBtn.addEventListener('click', () => {
         alert("Seu carrinho de chocolate está vazio. Que tal um brownie?");
     }
 });
+
