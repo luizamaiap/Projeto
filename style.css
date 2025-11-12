@@ -245,7 +245,7 @@ main {
     border-radius: 12px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 18    px rgba(0,0,0,0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     border: 1px solid var(--color-cobre);
 }
