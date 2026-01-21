@@ -1,27 +1,25 @@
+export type Category = 'Tudo' | 'Tortas' | 'Bolos' | 'Doces' | 'Bebidas';
+export type Tab = 'menu' | 'pedidos' | 'contato'; // <--- TIPO NOVO AQUI
 
 export interface Product {
   id: string;
   name: string;
   description: string;
   price: number;
+  category: Category;
   image: string;
-  category: string;
-  ingredients?: string[];
+  ingredients?: string[]; // Adicionado para evitar erro no OrderDetail
 }
-
-export type Category = 'Tudo' | 'Caseirinhos' | 'Bolos no Pote' | 'Brownies' | 'Doces';
 
 export interface CartItem extends Product {
   quantity: number;
 }
 
-export type OrderStatus = 'pendente' | 'preparando' | 'entrega' | 'concluido';
-
 export interface Order {
   id: string;
   items: CartItem[];
   total: number;
-  status: OrderStatus;
-  estimatedTime: string;
+  status: 'preparando' | 'entrega' | 'concluido';
+  estimatedTime?: string;
   createdAt: number;
 }

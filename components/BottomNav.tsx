@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Tab } from '../App';
+import { Tab } from '../types'; // <--- IMPORTANDO DE TYPES, NÃO DE APP
 
 interface BottomNavProps {
   activeTab: Tab;
